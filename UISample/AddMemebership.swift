@@ -8,8 +8,10 @@
 
 import UIKit
 
-class AddMemebership: UIViewController {
 
+class AddMemebership: UIViewController {
+      // 멤버쉽 추가 페이지
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -22,47 +24,26 @@ class AddMemebership: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    
     @IBOutlet weak var paramName: UITextField!
     @IBOutlet weak var paramCode: UITextField!
     
-    
-
-    @IBAction func Add(_ sender: Any) {
-        
-        
-        let vc = self.presentingViewController as? CollectionViewController
-        vc?.Test2 = "End"
-        self.presentingViewController?.dismiss(animated: true, completion: nil)
-        
-        
-
-        
-        
-
-//        if let rvc = self.storyboard?.instantiateViewController(withIdentifier: "MembershipTab") as? CollectionViewController{
-//            rvc.membershipName.append(self.paramName.text!)
-//            rvc.barcode.append(Int(self.paramCode.text!)!)
-//            rvc.membershipLogo.append(UIImage(named: "default"))
-//            rvc.Test2 = "End"
-//
-////            self.presentedViewController?.dismiss(animated: true, completion: nil)
-//            //            self.present(rvc, animated: true, completion:nil)
-////                        self.navigationController?.pushViewController(rvc, animated: true)
-//            _ = self.navigationController?.popViewController(animated: true)
-//            
-//        }
-        
-    }
    
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    @IBAction func Add(_ sender: Any) {
+        // 추가 버튼 누를시
+        
+        var ad = UIApplication.shared.delegate as? AppDelegate
+        // 앱델리게이트 내부 변수 사용하기
+        
+        ad?.membershipName.append(self.paramName.text!)
+        ad?.barcode.append(Int(self.paramCode.text!)!)
+        ad?.membershipLogo.append(UIImage(named: "default"))
+        // 배열 내에 변수 추가
+        
+        self.navigationController?.popViewController(animated: true)
+        // 화면 되돌아가기
     }
-    */
+    
 
 }

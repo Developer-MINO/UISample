@@ -12,6 +12,15 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
+    
+    var Test : Int?
+    var Test2 : String?
+    var paramEmail : String?
+    
+    
+    var membershipName = ["KT"]
+    var membershipLogo = [UIImage(named: "ktLogo")]
+    var barcode = [9423572839482256]
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {

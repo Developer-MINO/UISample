@@ -15,7 +15,9 @@ class CollectionShowController: UIViewController {
         super.viewDidLoad()
         
         self.ShowBarcode.image = self.fromString(string: String(describing: barcode))
+        //바코드 이미지로 변환
         self.ShowName.text = self.title
+        //전달받은 string 띄우기
         
         
         
@@ -40,7 +42,7 @@ class CollectionShowController: UIViewController {
     
     
     
-    
+    // 바코드 이미지로 변환 함수
     func fromString(string: String) -> UIImage? {
         let data = string.data(using: String.Encoding.ascii)
         if let filter = CIFilter(name: "CICode128BarcodeGenerator") {

@@ -11,6 +11,9 @@ import UIKit
 class CollectionViewCell : UICollectionViewCell {
 
  
+    //셀이 가지고 있는 값
+    
+    
     @IBOutlet weak var LogoShow: UIImageView!
     @IBOutlet weak var LogoName: UILabel!
 
